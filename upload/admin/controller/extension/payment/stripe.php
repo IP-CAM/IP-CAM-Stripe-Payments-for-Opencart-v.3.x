@@ -52,71 +52,71 @@ class ControllerExtensionPaymentStripe extends Controller {
 		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=payment', true);
 
 		if (isset($this->request->post['payment_stripe_environment'])) {
-			$data['stripe_environment'] = $this->request->post['payment_stripe_environment'];
+			$data['payment_stripe_environment'] = $this->request->post['payment_stripe_environment'];
 		} elseif ($this->config->has('payment_stripe_environment')) {
-			$data['stripe_environment'] = $this->config->get('payment_stripe_environment');
+			$data['payment_stripe_environment'] = $this->config->get('payment_stripe_environment');
 		} else {
-			$data['stripe_environment'] = 'test';
+			$data['payment_stripe_environment'] = 'test';
 		}
 
 		if (isset($this->request->post['payment_stripe_currency'])) {
-			$data['stripe_currency'] = $this->request->post['payment_stripe_currency'];
+			$data['payment_stripe_currency'] = $this->request->post['payment_stripe_currency'];
 		} elseif ($this->config->has('payment_stripe_currency')) {
-			$data['stripe_currency'] = $this->config->get('payment_stripe_currency');
+			$data['payment_stripe_currency'] = $this->config->get('payment_stripe_currency');
 		} else {
-			$data['stripe_currency'] = 'usd';
+			$data['payment_stripe_currency'] = 'usd';
 		}
 
 		if (isset($this->request->post['payment_stripe_test_publishable_key'])) {
-			$data['stripe_test_publishable_key'] = $this->request->post['payment_stripe_test_publishable_key'];
+			$data['payment_stripe_test_publishable_key'] = $this->request->post['payment_stripe_test_publishable_key'];
 		} elseif ($this->config->has('payment_stripe_test_publishable_key')) {
-			$data['stripe_test_publishable_key'] = $this->config->get('payment_stripe_test_publishable_key');
+			$data['payment_stripe_test_publishable_key'] = $this->config->get('payment_stripe_test_publishable_key');
 		} else {
-			$data['stripe_test_publishable_key'] = '';
+			$data['payment_stripe_test_publishable_key'] = '';
 		}
 
 		if (isset($this->request->post['payment_stripe_test_secret_key'])) {
-			$data['stripe_test_secret_key'] = $this->request->post['payment_stripe_test_secret_key'];
+			$data['payment_stripe_test_secret_key'] = $this->request->post['payment_stripe_test_secret_key'];
 		} elseif ($this->config->has('payment_stripe_test_secret_key')) {
-			$data['stripe_test_secret_key'] = $this->config->get('payment_stripe_test_secret_key');
+			$data['payment_stripe_test_secret_key'] = $this->config->get('payment_stripe_test_secret_key');
 		} else {
-			$data['stripe_test_secret_key'] = '';
+			$data['payment_stripe_test_secret_key'] = '';
 		}
 
 		if (isset($this->request->post['payment_stripe_live_publishable_key'])) {
-			$data['stripe_live_publishable_key'] = $this->request->post['payment_stripe_live_publishable_key'];
+			$data['payment_stripe_live_publishable_key'] = $this->request->post['payment_stripe_live_publishable_key'];
 		} elseif ($this->config->has('payment_stripe_live_publishable_key')) {
-			$data['stripe_live_publishable_key'] = $this->config->get('payment_stripe_live_publishable_key');
+			$data['payment_stripe_live_publishable_key'] = $this->config->get('payment_stripe_live_publishable_key');
 		} else {
-			$data['stripe_live_publishable_key'] = '';
+			$data['payment_stripe_live_publishable_key'] = '';
 		}
 
 		if (isset($this->request->post['payment_stripe_live_secret_key'])) {
-			$data['stripe_live_secret_key'] = $this->request->post['payment_stripe_live_secret_key'];
+			$data['payment_stripe_live_secret_key'] = $this->request->post['payment_stripe_live_secret_key'];
 		} elseif ($this->config->has('payment_stripe_live_secret_key')) {
-			$data['stripe_live_secret_key'] = $this->config->get('payment_stripe_live_secret_key');
+			$data['payment_stripe_live_secret_key'] = $this->config->get('payment_stripe_live_secret_key');
 		} else {
-			$data['stripe_live_secret_key'] = '';
+			$data['payment_stripe_live_secret_key'] = '';
 		}
 
 		if (isset($this->request->post['payment_stripe_store_cards'])) {
-			$data['stripe_store_cards'] = $this->request->post['payment_stripe_store_cards'];
+			$data['payment_stripe_store_cards'] = $this->request->post['payment_stripe_store_cards'];
 		} elseif ($this->config->has('payment_stripe_store_cards')) {
-			$data['stripe_store_cards'] = $this->config->get('payment_stripe_store_cards');
+			$data['payment_stripe_store_cards'] = $this->config->get('payment_stripe_store_cards');
 		} else {
-			$data['stripe_store_cards'] = 0;
+			$data['payment_stripe_store_cards'] = 0;
 		}
 
 		if (isset($this->request->post['payment_stripe_status'])) {
-			$data['stripe_status'] = $this->request->post['payment_stripe_status'];
+			$data['payment_stripe_status'] = $this->request->post['payment_stripe_status'];
 		} elseif ($this->config->has('payment_stripe_status')) {
-			$data['stripe_status'] = $this->config->get('payment_stripe_status');
+			$data['payment_stripe_status'] = $this->config->get('payment_stripe_status');
 		}
 
 		if (isset($this->request->post['payment_stripe_order_status_id'])) {
-			$data['stripe_order_status_id'] = $this->request->post['payment_stripe_order_status_id'];
+			$data['payment_stripe_order_status_id'] = $this->request->post['payment_stripe_order_status_id'];
 		} else {
-			$data['stripe_order_status_id'] = $this->config->get('payment_stripe_order_status_id');
+			$data['payment_stripe_order_status_id'] = $this->config->get('payment_stripe_order_status_id');
 		}
 
 		if (isset($this->error['warning'])) {

@@ -10,23 +10,6 @@ class ControllerExtensionPaymentStripe extends Controller {
 			$data['publishable_key'] = $this->config->get('payment_stripe_test_publishable_key');
 		}
 
-		$data['text_credit_card'] = $this->language->get('text_credit_card');
-		$data['text_start_date'] = $this->language->get('text_start_date');
-		$data['text_wait'] = $this->language->get('text_wait');
-		$data['text_loading'] = $this->language->get('text_loading');
-
-		$data['entry_cc_type'] = $this->language->get('entry_cc_type');
-		$data['entry_cc_number'] = $this->language->get('entry_cc_number');
-		$data['entry_cc_start_date'] = $this->language->get('entry_cc_start_date');
-		$data['entry_cc_expire_date'] = $this->language->get('entry_cc_expire_date');
-		$data['entry_cc_cvv2'] = $this->language->get('entry_cc_cvv2');
-		$data['entry_cc_issue'] = $this->language->get('entry_cc_issue');
-
-		$data['help_start_date'] = $this->language->get('help_start_date');
-		$data['help_issue'] = $this->language->get('help_issue');
-
-		$data['button_confirm'] = $this->language->get('button_confirm');
-
 		$data['can_store_cards'] = ($this->customer->isLogged() && $this->config->get('payment_stripe_store_cards'));
 		$data['cards'] = [];
 
