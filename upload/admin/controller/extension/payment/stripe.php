@@ -38,7 +38,10 @@ class ControllerExtensionPaymentStripe extends Controller {
 			'href' => $this->url->link('extension/payment/stripe', 'user_token=' . $this->session->data['user_token'], true)
 		);
 
-		$data['currencies'] = ['usd', 'eur'];
+		$data['currencies'] = [
+			'usd',
+			'eur'
+		];
 
 		if($this->initStripe() == true) {
 			$data['currencies'] = \Stripe\CountrySpec::retrieve("US")['supported_payment_currencies'];
